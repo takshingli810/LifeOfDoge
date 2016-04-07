@@ -1,0 +1,35 @@
+<%= form_for @user do |f| %>
+
+    <div>
+      <%=f.label :usermame %>
+      <%= f.text_field :username, placeholder: "Username" %>
+    </div>
+
+    <div>
+      <%=f.label :password %>
+      <%= f.text_field :password, placeholder: "Password", 
+      type:"password" %>
+    </div>
+
+    <div>
+      <%=f.label :email %>
+      <%= f.text_field :email, placeholder: "Email Address" %>
+    </div>
+
+    <div>
+      <%=f.label "Location" %>
+      <%= f.text_field :location, placeholder: "location" %>
+    </div>
+
+     <div>
+      <%=f.label "Doges" %>
+      <%= f.text_field :dogeCount, placeholder: "update your doge count" %>
+    </div>
+  
+    
+    <%= f.submit "Edit me >:D" %>
+    
+  
+  <%end%>
+
+  <h5><%= button_to 'Delete me =(', @user , method: :delete %></h5>

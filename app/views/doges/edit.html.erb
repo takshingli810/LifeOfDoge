@@ -1,0 +1,18 @@
+<h1>Edit my WowwWs</h1>
+
+  <%= form_for @doge do |f| %>
+    <div>
+      <%=f.label "Gimme A better name" %>
+      <%= f.text_field :dogeName, placeholder: "such name" %>
+    </div>
+    <div>
+      <%=f.label :age %>
+      <%= f.text_field :age, placeholder: "Did I burfday? 🎂" %>
+    </div>
+    <div>
+      <%=f.label :detail %>
+      <%= f.text_field :detail, placeholder: "Much details" %>
+    </div>
+    <%= f.submit "Edit me for bash hoomans" %>
+
+  <%end%>

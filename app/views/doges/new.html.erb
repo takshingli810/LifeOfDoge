@@ -1,0 +1,18 @@
+<h1>Sign up!!!</h1>
+
+  <%= form_for @doge, url: {action: :create, controller: :doges} do |f| %>
+    <div>
+      <%=f.label "Doge's Name" %>
+      <%= f.text_field :dogeName, placeholder: "gimme a wow name" %>
+    </div>
+    <div>
+      <%=f.label :age %>
+      <%= f.text_field :age, placeholder: "how many years of wow?" %>
+    </div>
+    <div>
+      <%=f.label :detail %>
+      <%= f.text_field :detail, placeholder: "Much details" %>
+    </div>
+    <%= f.submit "Create me to bash hoomans" %>
+
+  <%end%> 

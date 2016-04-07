@@ -1,0 +1,6 @@
+<h1>Hello Hooman, This is <%= @doge.dogeName %> Doge</h1>
+<h2>I have been wowing for <%= @doge.age%> year(s)</div>
+<h3>Such detail: <%= @doge.detail %> </h3>
+
+<%= button_to "Edit my wows", edit_user_doge_path(@doge.id) , method: :get%>
+<%= button_to 'Delete me 😢 no more wows', @doge , method: :delete %>

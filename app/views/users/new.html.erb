@@ -1,0 +1,30 @@
+<h1>Sign up!!!</h1>
+
+  <%= form_for @user do |f| %>
+    <div>
+      <%=f.label :username %>
+      <%= f.text_field :username, placeholder: "Username" %>
+    </div>
+    <div>
+      <%=f.label :password %>
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+    <div>
+      <%=f.label :password %>
+        <%= f.password_field :password_confirmation, placeholder: "Password AGAIN!" %>
+    </div>
+    <div>
+      <%=f.label :email %>
+      <%= f.text_field :email, placeholder: "Email Address" %>
+    </div>
+     <div>
+      <%=f.label :Doges %>
+      <%= f.text_field :dogeCount, placeholder: "How many Doge do you have?" %>
+    </div> 
+    <div>
+      <%=f.label :location %>
+      <%= f.text_field :location, placeholder: "Where are you?" %>
+    </div>
+    <%= f.submit "Create me :D" %>
+
+  <%end%>

@@ -1,0 +1,8 @@
+<h1>Welcome, <%= @user.username %></h1>
+<div><%= @user.location%></div>
+<div><%= @user.dogeCount%></div>
+
+<%= button_to "Add some WOW in your life?", new_user_doge_path(@user.id), method: :get%>
+<%= button_to "Edit me =)", edit_user_path(@user.id) , method: :get%>
+
+<%= button_to "Logout =(", "/sessions" , method: :delete%>
