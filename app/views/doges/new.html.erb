@@ -13,6 +13,9 @@
       <%=f.label :detail %>
       <%= f.text_field :detail, placeholder: "Much details" %>
     </div>
+    <div>
+      <%= f.hidden_field :user_id, :value => "#{@user.id}" %>
+    </div>
     <%= f.submit "Create me to bash hoomans" %>
 
   <%end%> 

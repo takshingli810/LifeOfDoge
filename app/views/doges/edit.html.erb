@@ -1,6 +1,6 @@
 <h1>Edit my WowwWs</h1>
 
-  <%= form_for @doge do |f| %>
+  <%= form_for @doge, url: {action: :update, controller: :doges} do |f| %>
     <div>
       <%=f.label "Gimme A better name" %>
       <%= f.text_field :dogeName, placeholder: "such name" %>

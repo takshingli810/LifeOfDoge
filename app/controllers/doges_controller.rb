@@ -5,15 +5,17 @@ class DogesController < ApplicationController
   end
 
   def new 
+    @user = User.find(session[:user_id])
     @doge = Doge.new
   end
 
   def create
     @doge = Doge.create(doge_params)
-    redirect_to "/users/#{current_user.id}/doges/#{@doge.id}"
+    redirect_to user_doge_path(current_user, @doge.id)
   end
 
   def show 
+    @user = User.find(session[:user_id])
     @doge = Doge.find(params[:id])
   end
 
@@ -25,7 +27,7 @@ class DogesController < ApplicationController
     @doge = Doge.find(params[:id])
     @doge.update_attributes(doge_params)  
     @doge.save
-    redirect_to doge_path(@doge)
+    redirect_to user_doge_path(current_user, @doge.id)
   end
 
   def destroy 

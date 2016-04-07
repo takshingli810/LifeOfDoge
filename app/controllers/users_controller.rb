@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+ # before_action :set_user, only: [:show, :edit, :update, :destroy]
+ #  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   def index
     render :index
@@ -36,32 +38,27 @@ class UsersController < ApplicationController
   end
 
   private 
-  def user_params
-    params.require(:user)
-      .permit(:username,
-              :email,
-              :password,
-              :password_confirmation,
-              :profilePic,
-              :location,
-              :dogeCount)
-  end
+    def user_params
+      params.require(:user)
+        .permit(:username,
+                :email,
+                :password,
+                :password_confirmation,
+                :profilePic,
+                :location,
+                :dogeCount)
+    end
+
+
+    # def set_user
+    #    # Use callbacks to share common setup or constraints between actions.
+    #     @user = User.find(params[:id])
+    # end
+
+    # def set_s3_direct_post
+    #   @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+    # end
 
 end
-
-
-# create_table "users", force: :cascade do |t|
-#     t.string   "username"
-#     t.string   "password"
-#     t.string   "email"
-#     t.string   "profilePic"
-#     t.string   "location"
-#     t.datetime "created_at", null: false
-#     t.datetime "updated_at", null: false
-#   end
-
-
-
-
 
 
