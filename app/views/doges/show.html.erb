@@ -1,78 +1,19 @@
- <h1>Hello Hooman, This is <%= @doge.dogeName %> Doge</h1>
-<h2>I have been wowing for <%= @doge.age%> year(s)</div>
-<h3>Such detail: <%= @doge.detail %> </h3>
-
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-  <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-  <script src="js/modernizr.js"></script> <!-- Modernizr -->
-    
-  <title>Horizontal Timeline | CodyHouse</title>
-</head>
-<body>
-        
-<section class="cd-horizontal-timeline">
-  <div class="timeline">
-    <div class="events-wrapper">
-      <div class="events">
-        <ol>
-          <li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
-
-          <% @doge.pictures.each do |pic| %>
-            <li><a href="#0" data-date="<%= pic.created_at.strftime("%d/%m/19") %>"><%= pic.created_at.strftime("%d") %> Mar</a></li>
-          <%end%>
-        </ol>
-
-        <span class="filling-line" aria-hidden="true"></span>
-      </div> <!-- .events -->
-    </div> <!-- .events-wrapper -->
-      
-    <ul class="cd-timeline-navigation">
-      <li><a href="#0" class="prev inactive">Prev</a></li>
-      <li><a href="#0" class="next">Next</a></li>
-    </ul> <!-- .cd-timeline-navigation -->
-  </div> <!-- .timeline -->
-
-  <div class="events-content">
-    <ul> 
-
-    <% @doge.pictures.each do |pic| %>
-            <%= pic.created_at.strftime("%d/%m/%Y") %>
-            <li class="selected" data-date="<%= pic.created_at.strftime("%d/%m/%Y") %>">
-                  <img src= "<%= pic.pictureURL%> "            
-            </li>
-          <%end%>
-
-     
-    </ul>
-  </div> <!-- .events-content -->
-</section>
-  
-<script src="js/jquery-2.1.4.js"></script>
-<script src="js/jquery.mobile.custom.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+<h2>Hello Hooman, This is <%= @doge.dogeName %> Doge</h2>
+<h2>I have been wowing for <%= @doge.age%> year(s)</h2>
+<h2>Such detail: <%= @doge.detail %> </h2>
 
 <%=form_for @doge, url: "/doges/#{@doge.id}/" do |f|  %>
   <%= f.hidden_field :pictureURL, :role=>"uploadcare-uploader", :value => "" %>
   <%= f.submit "upload me" %>
 <%end%>
 
+<% @doge.pictures.each do |pic| %>         
+    <img src= "<%= pic.pictureURL%>">         
+ <%end%> 
 
-<!-- % @doge.pictureURL.each do |n| %>
-  <img src = "%= n %>">
 
-%end%>
- -->
-
-<%= button_to "Edit my wows", "/users/#{@user.id}/doges/#{@doge.id}/edit", method: :get%>
-<%= button_to 'Delete me 😢 no more wows', "/users/#{@user.id}/doges/#{@doge.id}" , method: :delete, data: {confirm: "Are you SUREEE you want to delete #{@doge.dogeName} 🐕😢 ?" } %>
+<%= button_to "Edit my wows 😱", "/users/#{@user.id}/doges/#{@doge.id}/edit", method: :get, :class => "btn btn-primary" %>
+<%= button_to 'Delete me 😢 no more wows', "/users/#{@user.id}/doges/#{@doge.id}" , method: :delete, data: {confirm: "Are you SUREEE you want to delete #{@doge.dogeName} 🐕😢 ?" }, :class => "btn btn-primary" %>
 
 </body>
 </html>

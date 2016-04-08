@@ -1,18 +1,16 @@
-<h1>Edit my WowwWs</h1>
-
   <%= form_for @doge, url: {action: :update, controller: :doges} do |f| %>
-    <div>
+    <div class="label">
       <%=f.label "Gimme A better name" %>
       <%= f.text_field :dogeName, placeholder: "such name" %>
     </div>
-    <div>
+    <div class="label">
       <%=f.label :age %>
       <%= f.text_field :age, placeholder: "Did I burfday? 🎂" %>
     </div>
-    <div>
+    <div class="label">
       <%=f.label :detail %>
       <%= f.text_field :detail, placeholder: "Much details" %>
     </div>
-    <%= f.submit "Edit me for bash hoomans" %>
+    <%= f.submit "Edit me for bash hoomans 👊", :class => "btn btn-primary" %>
 
   <%end%>

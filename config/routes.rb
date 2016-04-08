@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   #Sessions
   get "/sign_in", to: "sessions#new"
   post "/sessions", to: "sessions#create"
-  delete "/sessions", to: "sessions#destroy"
+  delete "/log_out", to: "sessions#destroy", as: "logout"
 
   #pushing picture array
   patch "/doges/:id/", to: "doges#pushPictureToArray"

@@ -33,7 +33,7 @@ class DogesController < ApplicationController
   def destroy 
     @doge = Doge.find(params[:id])
     @doge.destroy
-    redirect_to users_path
+    redirect_to user_path(current_user)
   end
   
   def pushPictureToArray
