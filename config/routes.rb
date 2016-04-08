@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
-# root to index page
-root to: "users#index"
+  # root to index page
+  root to: "users#index"
 
-# restFUL routes for cruding
-resources :users do 
-  resources :doges
-end 
+  # restFUL routes for cruding
+  resources :users do 
+    resources :doges
+  end 
 
-#Sessions
-get "/sign_in", to: "sessions#new"
-post "/sessions", to: "sessions#create"
-delete "/sessions", to: "sessions#destroy"
+  #Sessions
+  get "/sign_in", to: "sessions#new"
+  post "/sessions", to: "sessions#create"
+  delete "/sessions", to: "sessions#destroy"
 
 end
 

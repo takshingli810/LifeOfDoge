@@ -1,5 +1,5 @@
 class Doge < ActiveRecord::Base
-  belongs_to :users
+  belongs_to :user
 
 
   def before_save 

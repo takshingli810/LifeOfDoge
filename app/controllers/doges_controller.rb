@@ -25,7 +25,8 @@ class DogesController < ApplicationController
 
   def update 
     @doge = Doge.find(params[:id])
-    @doge.update_attributes(doge_params)  
+    @doge.update_attributes(doge_params)
+    # @doge.pictureURL.push=  
     @doge.save
     redirect_to user_doge_path(current_user, @doge.id)
   end
