@@ -25,8 +25,7 @@ class DogesController < ApplicationController
 
   def update 
     @doge = Doge.find(params[:id])
-    @doge.update_attributes(doge_params)
-    # @doge.pictureURL.push=  
+    @doge.update_attributes(doge_params) 
     @doge.save
     redirect_to user_doge_path(current_user, @doge.id)
   end
@@ -37,7 +36,15 @@ class DogesController < ApplicationController
     redirect_to users_path
   end
   
-
+  def pushPictureToArray
+    @user = User.find(session[:user_id])
+    @doge = Doge.find(params[:id])
+    picture = Picture.create(pictureURL: doge_params[:pictureURL])
+    @doge.pictures << picture
+    @doge.save
+    redirect_to user_doge_path(current_user, @doge.id)
+  end  
+  
   private 
     def doge_params
       params.require(:doge)
