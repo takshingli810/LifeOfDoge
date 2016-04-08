@@ -1,5 +1,6 @@
 <h2>Welcome, <%= @user.username %></h2>
-<h2><%= @user.location%></h2>
+<h2>Hooman is located at <%= @user.location%></h2>
+
 
 
 <%= button_to "Wanna add some WOW🐕 in your life?", new_user_doge_path(@user.id), method: :get, :class => "btn btn-primary"%>
