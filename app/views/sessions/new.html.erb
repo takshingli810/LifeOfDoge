@@ -1,15 +1,15 @@
 <%= form_for @user, url: "/sessions", 
                       method: "post" do |f| %>
-  <div class="labels">
+  <div class="label">
     <%= f.label :username %>
     <%= f.text_field :username, placeholder: "Username" %>
   </div>
 
-  <div class="labels">
+  <div class="label">
     <%= f.label :password %>
     <%= f.password_field :password, placeholder: "Password" %>
   </div>
 
-<%= f.submit "Sign me in 😉" %>
+<%= f.submit "Sign me in 😉", :class => "btn btn-primary"%>
 
   <%end%>
