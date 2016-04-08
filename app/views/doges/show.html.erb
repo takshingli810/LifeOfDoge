@@ -2,5 +2,30 @@
 <h2>I have been wowing for <%= @doge.age%> year(s)</div>
 <h3>Such detail: <%= @doge.detail %> </h3>
 
+
+<div id="timeline">
+   <ul id="dates">
+      <li><a href="#">date1</a></li>
+      <li><a href="#">date2</a></li>
+   </ul>
+   <ul id="issues">
+      <li id="date1">
+         <p>Lorem ipsum.</p>
+      </li>
+      <li id="date2">
+         <p>Lorem ipsum.</p>
+      </li>
+   </ul>
+   <a href="#" id="next">+</a> <!-- optional -->
+   <a href="#" id="prev">-</a> <!-- optional -->
+</div>
+
+
+<%=form_for [@user, @doge] do |f|  %>
+  <%= f.hidden_field :pictureURL, :role=>"uploadcare-uploader" %>
+<%= f.submit "upload me" %>
+
+<%end%>
+
 <%= button_to "Edit my wows", edit_user_doge_path, method: :get%>
-<%= button_to 'Delete me 😢 no more wows', user_doge_path , method: :delete, data: {confirm: "Are you sure you want to delete #{@doge.dogeName}?" } %>
+<%= button_to 'Delete me 😢 no more wows', user_doge_path , method: :delete, data: {confirm: "Are you SUREEE you want to delete #{@doge.dogeName} 🐕😢 ?" } %>

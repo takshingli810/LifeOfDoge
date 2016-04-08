@@ -35,12 +35,14 @@ class DogesController < ApplicationController
     @doge.destroy
     redirect_to users_path
   end
+  
 
   private 
     def doge_params
       params.require(:doge)
         .permit(:dogeName,
                 :age,
+                :pictureURL,
                 :detail,
                 :user_id)
     end
